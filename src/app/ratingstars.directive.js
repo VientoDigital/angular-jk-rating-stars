@@ -17,7 +17,7 @@
 		}
 
 		return {
-			restrict: 'E',
+			restrict: 'EC',
 			replace: true,
 			templateUrl: 'rating-stars-directive.html',
 			scope: {},

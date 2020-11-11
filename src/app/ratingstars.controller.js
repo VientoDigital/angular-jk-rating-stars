@@ -68,7 +68,7 @@
 				var starItem = that.starsArray[index];
 				if (index <= (rating - 1)) {
                     starItem.class = "star-on";
-					starItem.icon = "star";
+					starItem.icon = that.offIcon;
 				} else {
                     if(that.offColor) starItem.class = "star-off";
 					starItem.icon = that.offIcon;
