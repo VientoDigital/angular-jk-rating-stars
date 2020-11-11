@@ -76,7 +76,7 @@
 				var starItem = that.starsArray[index];
 				if (index <= (rating - 1)) {
                     starItem.class = "star-on";
-					starItem.icon = "star";
+					starItem.icon = that.offIcon;
 				} else {
                     if(that.offColor) starItem.class = "star-off";
 					starItem.icon = that.offIcon;
@@ -114,7 +114,7 @@
 		}
 
 		return {
-			restrict: 'E',
+			restrict: 'EC',
 			replace: true,
 			templateUrl: 'rating-stars-directive.html',
 			scope: {},
@@ -142,4 +142,4 @@
 
 }());
 
-(function(){angular.module("jkAngularRatingStars.templates", []).run(["$templateCache", function($templateCache) {$templateCache.put("rating-stars-directive.html","<div\r\n  class=\"jk-rating-stars-container\"\r\n  layout=\"row\" >\r\n\r\n  <a\r\n    class=\"button\"\r\n    ng-click=\"ctrl.setRating(0)\"\r\n    ng-if=\"!ctrl.readOnly && ctrl.resetAllowed\" >\r\n    <i class=\"material-icons\">remove_circle_outline</i>\r\n  </a>\r\n\r\n  <a\r\n    class=\"button\"\r\n    ng-class=\"[item.class, item.shadow]\"\r\n    ng-mouseover=\"ctrl.setMouseOverRating($index + 1)\"\r\n    ng-mouseleave=\"ctrl.setMouseOverRating(ctrl.rating)\"\r\n    ng-click=\"ctrl.setRating($index + 1)\"\r\n    ng-repeat=\"item in ctrl.starsArray\" >\r\n    <i class=\"material-icons\">{{item.icon}}</i>\r\n  </a>\r\n\r\n</div>\r\n");}]);})();
+(function(){angular.module("jkAngularRatingStars.templates", []).run(["$templateCache", function($templateCache) {$templateCache.put("rating-stars-directive.html","<div\n  class=\"jk-rating-stars-container\"\n  layout=\"row\" >\n\n  <a\n    class=\"button\"\n    ng-click=\"ctrl.setRating(0)\"\n    ng-if=\"!ctrl.readOnly && ctrl.resetAllowed\" >\n    <i class=\"material-icons\">remove_circle_outline</i>\n  </a>\n\n  <a\n    class=\"button\"\n    ng-class=\"[item.class, item.shadow]\"\n    ng-mouseover=\"ctrl.setMouseOverRating($index + 1)\"\n    ng-mouseleave=\"ctrl.setMouseOverRating(ctrl.rating)\"\n    ng-click=\"ctrl.setRating($index + 1)\"\n    ng-repeat=\"item in ctrl.starsArray\" >\n    <i class=\"material-icons\">{{item.icon}}</i>\n  </a>\n\n</div>\n");}]);})();
